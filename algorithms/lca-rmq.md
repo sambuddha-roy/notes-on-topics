@@ -37,7 +37,7 @@ argmin {A[x]: i <= x <= j}.
 - LCA <= RMQ
     - reformulates lca(u, v) as finding shallowest vertex in dfs 
     trail between u and v.
-    - considers euler walk over tree according to the dfs; this
+    - considers [euler walk](https://en.wikipedia.org/wiki/Eulerian_path) over tree according to the dfs; this
     is the array on which RMQ is run. **this is the main
      observation.**
     - preprocessing time incurs extra O(n)
