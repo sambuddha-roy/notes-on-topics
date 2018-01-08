@@ -29,11 +29,11 @@ reductions!
 
 *Companion Problem:* 
 
-Consider also the _RMQ_ problem, where given an 
+Alongwith LCA, also consider the _RMQ_ problem:
+- where given an 
 array A, and indices i, j, RMQ(A, i, j) returns 
 argmin {A[x]: x in [i, j]}. 
-
-RMQ = Range Minimum Query.
+- RMQ = Range Minimum Query.
 
 *Piece 1: reduction 1*
 - LCA <= RMQ
