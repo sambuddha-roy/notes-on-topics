@@ -31,8 +31,7 @@ suitable pivot. this involves two main considerations:
     - medians of the groups of 5. takes O(n) time. 
     - medians of the medians - this is the pivot - takes T(n/5) time.
     - based on this pivot, how much do we discard? either the "top part"
-    or the "bottom part". Roughly the "top" parts in n/10 groups of
-    5. So, 3 x n/10 = 3n/10. 
+    or the "bottom part". Roughly the "top" parts in n/10 groups of 5. So, 3 x n/10 = 3n/10. 
     - so, recurrence looks like: T(n) = T(n/5) + T(7n/10) + O(n)
 - for groups of 3, this would look like T(n) = T(n/3) + T(2n/3) + O(n)
     - takes too much time in finding the pivot, T(n/3)
