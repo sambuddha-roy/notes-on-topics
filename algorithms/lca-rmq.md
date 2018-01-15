@@ -1,4 +1,4 @@
-## [The LCA Problem Revisited](www.ics.uci.edu/~eppstein/261/BenFar-LCA-00.pdf)
+## [The LCA Problem Revisited](http://www.ics.uci.edu/~eppstein/261/BenFar-LCA-00.pdf)
 ### Authors: [Michael Bender](http://www3.cs.stonybrook.edu/~bender/), [Martin Farach-Colton](https://www.cs.rutgers.edu/~farach/)
 ### Venue: [LATIN'00](https://www.fing.edu.uy/inco/eventos/latin-2000/)
 #### What is the problem about
