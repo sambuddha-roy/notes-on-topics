@@ -1,6 +1,6 @@
 ## [The LCA Problem Revisited](www.ics.uci.edu/~eppstein/261/BenFar-LCA-00.pdf)
-### Authors: Michael Bender, Martin Farach-Colton
-
+### Authors: [Michael Bender](http://www3.cs.stonybrook.edu/~bender/), [Martin Farach-Colton](https://www.cs.rutgers.edu/~farach/)
+### Venue: [LATIN'00](https://www.fing.edu.uy/inco/eventos/latin-2000/)
 #### What is the problem about
 
 The [basic problem](https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/) is: given a tree T, and vertices
