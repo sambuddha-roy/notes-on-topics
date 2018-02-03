@@ -43,7 +43,7 @@ L[i] <= A[i] <= R[i] for every i. Return this number modulo
 allow A[0] <= A[1] <=...<= A[n-1]
 - more interesting is to consider weird sequences where the sequence
 (A[0], A[1], ..., A[n-1]) consists of _two_ increasing _chains_ 
-(instead of just _one_ as in the topcoder problem.
+(instead of just _one_ as in the topcoder problem):
     - this is also easy to do
     - keep, in effect, another _pointer_ marking where this
     change happens as we walk through the DP matrix.
