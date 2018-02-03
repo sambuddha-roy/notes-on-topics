@@ -12,7 +12,9 @@ in these two ways.
 - this is reminiscent of the [chinese restaurant process](https://en.wikipedia.org/wiki/Chinese_restaurant_process) (crp), 
 where a new element attaches to one of the existing tables.
 - this is like counting all configurations - the denominator in 
-a bayesian calculation. 
+a bayesian calculation. one of the situations where it is possible
+to _efficiently_ count all of the (exponentially many) 
+configurations.
 - one more reason why one should know dp's well.
 - we will anthropomorphize the rabbits and call them guys.
 
@@ -42,7 +44,9 @@ important, apart from that there is an order in processing them.
     - hmm, keeping all these k numbers might turn out to be 
     costly.
     - in fact not all of these k numbers, we need to store a
-    suitable _sketch_
+    suitable _sketch_, depending on the _constraints_ of the 
+    already seated guys (we call these _existing_ constraints), 
+    and on _constraints_ of the new-to-be-seated guy:
         - how many of these k are _full_ (i.e. makes one of the
         *existing* constraints tight)
         - out of the non-full tables, how many are _full_ 
@@ -50,6 +54,8 @@ important, apart from that there is an order in processing them.
         utilized. while placing a new guy wont violate an
         _existing_ constraint for the guys we have placed so far,
         it will violate the new guy's constraint.
+        - and finally (by exclusion), the non-full tables that 
+        are actually valid to place a new guy. 
     - given the above discussion, it seems like we should indeed
     process the indices in a specific order; at this point looks like
     a _descending_ order might be suitable.
