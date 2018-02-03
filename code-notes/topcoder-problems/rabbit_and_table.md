@@ -49,13 +49,22 @@ important, apart from that there is an order in processing them.
     and on _constraints_ of the new-to-be-seated guy:
         - how many of these k are _full_ (i.e. makes one of the
         *existing* constraints tight)
-        - out of the non-full tables, how many are _full_ 
-        corresponding to the _next_ X-value. Even these cannot be
-        utilized. while placing a new guy wont violate an
-        _existing_ constraint for the guys we have placed so far,
-        it will violate the new guy's constraint.
-        - and finally (by exclusion), the non-full tables that 
-        are actually valid to place a new guy. 
+        - the non-full tables break up into three categories
+            - how many are _full_ 
+            corresponding to the _next_ X-value. Even these cannot be
+            utilized. while placing a new guy wont violate an
+            _existing_ constraint for the guys we have placed so far,
+            it will violate the new guy's constraint.
+            - how many are _near-full_ corresponding to the 
+             _next_ X-value. What _near-full_ means is that upon
+             adding the next guy, these tables would become full.
+            - finally, the tables that are less than near-full           
     - given the above discussion, it seems like we should indeed
     process the indices in a specific order; at this point looks like
     a _descending_ order might be suitable.
+- **Update**: Let's step through the process that happens when we 
+add one more guy (say the i+1_st guy) to the existing tables. 
+    - Each of the i_th step's matrix entries get updated to 
+    reflect this. 
+    - main issue is whether we can efficiently update the sketch. 
+    - 
