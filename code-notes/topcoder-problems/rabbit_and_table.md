@@ -32,14 +32,17 @@ a bayesian calculation.
 order of their X-values; at this point this does not seem overly
 important, apart from that there is an order in processing them.
 - how do we get an efficient dp from this?
-- let us play with the example above to see what can be a suitable
+- **State**: let us play with the example above to see what can be a suitable
 **state** for this problem.
     - in the state, we will keep i, the index into X, with the 
     understanding that we have processed all the indices upto i.
     - at this point, we would seem to need the _counts_ at the tables 
     created so far. if we have k tables so far, then we have to 
-    keep these k numbers as state/memory. 
-    - in fact not all of these k numbers, we need to store
+    keep these k numbers as state/memory.
+    - hmm, keeping all these k numbers might turn out to be 
+    costly.
+    - in fact not all of these k numbers, we need to store a
+    suitable _sketch_
         - how many of these k are _full_ (i.e. makes one of the
         *existing* constraints tight)
         - out of the non-full tables, how many are _full_ 
