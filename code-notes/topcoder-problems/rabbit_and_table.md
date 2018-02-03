@@ -9,7 +9,7 @@ distinct if there are two indices who are partitioned differently
 in these two ways.
 
 #### Comments
-- this is reminiscent of the chinese restaurant process (crp), 
+- this is reminiscent of the [chinese restaurant process](https://en.wikipedia.org/wiki/Chinese_restaurant_process) (crp), 
 where a new element attaches to one of the existing tables.
 - this is like counting all configurations - the denominator in 
 a bayesian calculation. 
