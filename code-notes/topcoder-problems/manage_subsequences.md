@@ -40,7 +40,11 @@ B.
     - what should M[i, j, k] mean? We should work like M[i, j] - i.e. 
 find the minimum number of added characters, but we should also keep
 a check on the _maximum substring_ - actually the maximum 
- _prefix_ of B that we have seen so far. 
-This is the point of the third index k. 
+ _prefix_ of B that we have seen so far, in the implicitly constructed
+ _extended_ array S. 
+This is the point of the third index k.
+- **improvements**: am sure some kind of kmp-like string matching 
+could improve - where we keep an automata to figure out common
+substrings between A and B, etc. 
 
 
