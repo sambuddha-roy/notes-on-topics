@@ -188,7 +188,7 @@ the setup in Variant 5 with k transactions instead of just 2.
 
 #### Thoughts
 - the trick applied for Variant 5 for 2 transactions will not 
-work here because the number of **events** will blow up 
+scale because the number of **events** will blow up 
 exponentially, giving us O(2^k n). 
 - we need another trick.
 
