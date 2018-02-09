@@ -154,6 +154,10 @@ where i_1 < i_2 < ... < i_k.
 #### Thoughts:
 - Like we moved from Variant 0 to Variant 1a, here too, we
 can make the easy transition from Variant 2 to Variant 4. 
+- a sample problem that we can solve using this Variant: 
+given an array A = [a_1, a_2, ..., a_n] find max of 
+a_(i_1) + a_(i_2) - a_(i_3) for three indices 
+i_1 < i_2 < i_3. 
 
 #### Variant 5 (play with constraints on indices)
 In this setup, we are allowed 2 transactions but the transactions
@@ -181,4 +185,3 @@ situations.
 
 #### Variant 6 (play with constraints on indices, k transactions)
 the setup in Variant 5 with k transactions instead of just 2. 
-
