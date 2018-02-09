@@ -185,3 +185,10 @@ situations.
 
 #### Variant 6 (play with constraints on indices, k transactions)
 the setup in Variant 5 with k transactions instead of just 2. 
+
+#### Thoughts
+- the trick applied for Variant 5 for 2 transactions will not 
+work here because the number of **events** will blow up 
+exponentially. 
+- we need another trick.
+
