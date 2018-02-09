@@ -29,14 +29,14 @@ among all the entries between [a_1, ..., a_j].
 - similarly, a_j is the _maximum_ value between all the entries 
 in [a_i, a_(i+1), ..., a_n]
 - if not, we could have a better (i.e. higher) a_j - a_i value.
-- this naturally leads to the following subproblem:
+- **Components:** this naturally leads to the following subproblem:
     - for each i, compute the _minimum_ of the _prefix array_
     [a_1, a_2, ..., a_i]. Store results in a new array P 
     (for prefix).
     - for each j, compute the _maximum_ of the _suffix array_
     [a_j, a_(j+1), ..., a_n]. Store results in a new array S 
     (for suffix).
-- clearly if we have the two subproblems solved, then the original 
+- **Stitching:** clearly if we have the two subproblems solved, then the original 
 problem is easy:
     - for each index i, look at the entry P[i] and S[i+1] (while 
     observing obvious boundary conditions, etc.). The difference
@@ -75,3 +75,59 @@ and we will result in a O(n) algorithm.
 - also, of course, nothing special about the _subtraction_ or 
 _maximization_. we could as well be _minimizing_ (say)
 f(a_j) + g(a_i)
+
+#### Variant 2 (two transactions)
+Here, the problem setup is the same as above, but now we are 
+allowed _two_ transactions where, at any point, we may hold 
+on to at most 1 stock. 
+
+#### Thoughts:
+- given this problem, let's call the problem in Variant 0 as
+ the **1-transaction** problem, and the current one as the 
+ **2-transaction** one.
+- notice how we solved Variant 0. applying similar decomposition 
+ideas to this problem yields the following subproblems. 
+- suppose the transactions (buy, sell, buy, sell) happen at 
+ i_1, j_1, i_2, j_2 (with i_1 < j_1 < i_2 < j_2)
+- then the solution i_1, j_1 is the optimal 1-transaction, i.e. 
+Variant 0 solution to the subarray ending at i_2. 
+- thus, it would help to consider the following subproblems:
+    - for each i, compute the best 1-transaction for the prefix 
+    subarray [a_1, a_2, ..., a_i]
+    - similarly for each j, compute the best 1-transaction for the
+    suffix subarray [a_j, a_(j+1), ..., a_n]
+- given solutions to these subproblems, we can _stitch_ them up to 
+get a solution to the 2-transactions case, overall time = O(n)
+- so, how do we solve the subproblem in O(n) time?
+    - similar to the sweeping solution for the subproblem in 
+    Variant 0, let us try to work out a sweeping solution.
+    - so we will maintain the max, min and the indices of the 
+    prefix so far. 
+    - let us call this new array of (max, min, indices) as Q;
+    Q[i] contains the info about the corresponding prefix of
+    the array. 
+    - when we reach a[i], 
+        - if a[i]> max: we have to update the max - min
+        - if a[i] in (min, max): do nothing, no changes.
+        - if a[i] < min: we have to set a[i] as the new min
+        and this would start sort-of-a new epoch. no update to
+         max can happen yet, and yet the max and min are out 
+         of sequence. 
+    - so overall, we realise 
+        - we can make the above work out, with slightly more 
+        effort, 
+        - but still not clean enough.
+    - this is where we remember the description of P[i] in terms
+    of whether a[i] _participates_ in the minimum-finding or not.
+    - so here too, lets branch on _participation_.
+    - when we reach a[i]:
+        - if a[i] participates in the max - min finding, then the
+        solution would be a[i] - P[i-1] (where P[] stores the 
+        prefix array of mins!)
+        - if a[i] didn't participate, then the solution would be 
+        available in Q[i-1]
+        - so in short, Q[i] = max(a[i] - P[i-1], Q[i-1]) - imagining, 
+        for now, that Q only contains the max value. 
+    - and that is it - this solves Variant 2 in O(n) time.
+    
+   
