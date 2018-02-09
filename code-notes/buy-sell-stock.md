@@ -141,8 +141,8 @@ would be O(kn).
 
 #### Variant 4 (arbitrary functions)
 Given an array A = [a_1, a_2, ..., a_n] and k functions
-f_1, f_2, ... f_k, find the max (f_1(a_(i_1)) + f_2(a_(i_2)) + ...
-+ f_k(a_(i_k))) where i_1 < i_2 < ... < i_k. 
+f_1, f_2, ... f_k, find the 
+max (f_1(a_(i_1)) + f_2(a_(i_2)) + ... + f_k(a_(i_k))) where i_1 < i_2 < ... < i_k. 
 
 #### Thoughts:
 - Like we moved from Variant 0 to Variant 1a, here too, we
