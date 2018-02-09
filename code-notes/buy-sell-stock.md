@@ -5,7 +5,7 @@ of n (let's say) integers.
 You are allowed three operations on any given day: buy a stock, 
 sell a stock or hold the stock. Initially, you start with no 
 stocks. The objective is to buy a stock and then sell it 
-(on a different day) so as to maximize the profit. 
+(on a different day) so as to maximize the **profit**. 
 
 #### Comments:
 - We will actually go through a bunch of variants of this problem.
@@ -14,14 +14,16 @@ let's call the above version Variant 0.
 (kinda like generalization for generalization's sake :-)).
 - we will indicate the time complexity. Also note that these are 
 the thoughts for the pseudocode, and not the optimal (from pov 
-of # of variables in the program to keep, etc.). 
+of # of variables in the program to keep, etc.).
+- _most_ of the variants below may be solved in _linear_ time, 
+i.e. O(n) where n is the length of the array.
 - for instance in Variant 0, in an actual program, we will 
 need to keep just two running quantities through the program 
 (say, _minimum_ and _difference_ or so.)
 
 #### Variant 0:
 Given an array A = [a_1, a_2, ..., a_n] find indices i and j with 
-i < j so that the amount a_j - a_i is _maximized_
+i < j so that the amount/profit a_j - a_i is _maximized_
 
 #### Thoughts:
 - given the optimal solution, a_i is surely the _minimum_ value 
@@ -78,10 +80,14 @@ f(a_j) + g(a_i)
 
 #### Variant 2 (two transactions)
 Here, the problem setup is the same as above, but now we are 
-allowed _two_ transactions where, at any point, we may hold 
-on to at most 1 stock. 
+allowed _two_ transactions where, at any point,
+- we may either buy/hold/sell a stock, and
+- we may hold on to at most 1 stock. 
 
 #### Thoughts:
+- if we were to plot the buy-sell sequences out by a timeline
+of when we are holding the stock, then the timelines form 
+intervals, and the intervals are _disjoint_. 
 - given this problem, let's call the problem in Variant 0 as
  the **1-transaction** problem, and the current one as the 
  **2-transaction** one.
@@ -142,10 +148,37 @@ would be O(kn).
 #### Variant 4 (arbitrary functions)
 Given an array A = [a_1, a_2, ..., a_n] and k functions
 f_1, f_2, ... f_k, find the 
-max (f_1(a_(i_1)) + f_2(a_(i_2)) + ... + f_k(a_(i_k))) where i_1 < i_2 < ... < i_k. 
+max (f_1(a_(i_1)) + f_2(a_(i_2)) + ... + f_k(a_(i_k))) 
+where i_1 < i_2 < ... < i_k. 
 
 #### Thoughts:
 - Like we moved from Variant 0 to Variant 1a, here too, we
 can make the easy transition from Variant 2 to Variant 4. 
 
-   
+#### Variant 5 (play with constraints on indices)
+In this setup, we are allowed 2 transactions but the transactions
+do not need to be _disjoint_, i.e. the sequence (buy, buy, sell, sell)
+is _valid_. 
+
+#### Thoughts
+- While in Variant 2 (two transactions), the constraints on the 
+indices are i_1 < j_1 < i_2 < j_2, here, the constraints are 
+slightly relaxed: i_1 < j_1 and i_2 < j_2. 
+- lets do the brute force way first
+- constraints i_1 < j_1 and i_2 < j_2 is the union of two 
+  **events**: 
+    - i_1 < j_1 < i_2 < j_2 and 
+    - i_1 < i_2 < j_1 < j_2
+- we know how to find the max profit in the first of the above
+situations. 
+- do we know about the second situation? 
+    - well, yes!
+    - think in terms of Variant 4 above, where we are essentially
+    maximizing - a(i_1) - a(i_2) + a(j_1) + a(j_2) with 
+    these indices being in order. 
+    - so for both of the **events** described above, we may 
+    find the max profit in O(n)
+
+#### Variant 6 (play with constraints on indices, k transactions)
+the setup in Variant 5 with k transactions instead of just 2. 
+
