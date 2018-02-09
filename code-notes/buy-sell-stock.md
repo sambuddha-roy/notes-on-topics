@@ -127,7 +127,25 @@ get a solution to the 2-transactions case, overall time = O(n)
         - if a[i] didn't participate, then the solution would be 
         available in Q[i-1]
         - so in short, Q[i] = max(a[i] - P[i-1], Q[i-1]) - imagining, 
-        for now, that Q only contains the max value. 
+        for now, that Q only contains the max 1-transaction value. 
     - and that is it - this solves Variant 2 in O(n) time.
-    
+
+#### Variant 3 (k transactions):
+Same problem setup, but k transactions instead of 2. at any point, 
+can hold on to at most one stock. 
+
+#### Thoughts:
+- given what we know so far, it is easy to see that this can 
+also be framed as a dynamic program, and total time taken 
+would be O(kn). 
+
+#### Variant 4 (arbitrary functions)
+Given an array A = [a_1, a_2, ..., a_n] and k functions
+f_1, f_2, ... f_k, find the max (f_1(a_(i_1)) + f_2(a_(i_2)) + ...
++ f_k(a_(i_k))) where i_1 < i_2 < ... < i_k. 
+
+#### Thoughts:
+- Like we moved from Variant 0 to Variant 1a, here too, we
+can make the easy transition from Variant 2 to Variant 4. 
+
    
