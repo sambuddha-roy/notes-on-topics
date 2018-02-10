@@ -1,4 +1,4 @@
-## [Problem: Buy and sell stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+## [Problem: Buy and sell stock - I](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 #### Problem:
 You are given the price of a stock for n days, i.e. an array 
 of n (let's say) integers. 
@@ -186,7 +186,7 @@ situations.
     - so for both of the **events** described above, we may 
     find the max profit in O(n)
 
-#### Variant 6 (play with constraints on indices, k transactions)
+#### Variant 6 (differnet constraints on indices, k transactions)
 the setup in Variant 5 with k transactions instead of just 2. 
 
 #### Thoughts
