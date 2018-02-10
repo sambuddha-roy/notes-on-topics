@@ -160,8 +160,11 @@ a_(i_1) + a_(i_2) - a_(i_3) for three indices
 i_1 < i_2 < i_3. 
 
 #### Variant 5 (play with constraints on indices)
-In this setup, we are allowed 2 transactions but the transactions
-do not need to be _disjoint_, i.e. the sequence (buy, buy, sell, sell)
+In this setup, we are 
+- allowed 2 transactions,
+- at most one transaction (buy/sell) at a time,
+- but the transactions do not need to be _disjoint_, 
+i.e. the sequence (buy, buy, sell, sell)
 is _valid_. 
 
 #### Thoughts
