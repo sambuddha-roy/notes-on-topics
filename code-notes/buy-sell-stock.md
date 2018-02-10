@@ -158,6 +158,9 @@ can make the easy transition from Variant 2 to Variant 4.
 given an array A = [a_1, a_2, ..., a_n] find max of 
 a_(i_1) + a_(i_2) - a_(i_3) for three indices 
 i_1 < i_2 < i_3. 
+- note that Variant 3 with _k_ transactions actually corresponds
+to (an instance of) Variant 4 with _2k_ functions.
+
 
 #### Variant 5 (play with constraints on indices)
 In this setup, we are 
