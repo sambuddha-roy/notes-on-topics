@@ -188,7 +188,7 @@ situations.
     - so for both of the **events** described above, we may 
     find the max profit in O(n)
 
-### Variant 6 (differnet constraints on indices, k transactions)
+### Variant 6 (different constraints on indices, k transactions)
 the setup in Variant 5 with k transactions instead of just 2. 
 
 #### Thoughts
