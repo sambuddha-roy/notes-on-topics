@@ -1,5 +1,5 @@
 ## [Problem: Buy and sell stock - I](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
-#### Problem:
+### Problem:
 You are given the price of a stock for n days, i.e. an array 
 of n (let's say) integers. 
 You are allowed three operations on any given day: buy a stock, 
@@ -21,7 +21,7 @@ i.e. O(n) where n is the length of the array.
 need to keep just two running quantities through the program 
 (say, _minimum_ and _difference_ or so.)
 
-#### Variant 0:
+### Variant 0:
 Given an array A = [a_1, a_2, ..., a_n] find indices i and j with 
 i < j so that the amount/profit a_j - a_i is _maximized_
 
@@ -51,7 +51,7 @@ problem is easy:
     corresponding to P[i] lies in the i_th term a_i or lies 
     before, i.e. is P[i-1]
 
-#### Variant 1:
+### Variant 1:
 Given _two_ arrays A = [a_1, ..., a_n] and B = [b_1, ..., b_n]
 find indices i and j (where i < j) such that the amount b_j - a_i is maximized.
 
@@ -64,7 +64,7 @@ from Variant 0.
     - but of course, in that case, the time complexity is 
     O(max(len(A), len(B))).
     
-#### Variant 1a:
+### Variant 1a:
 Given an array A = [a_1, ..., a_n], _functions_ f, g, 
 find indices i and j (where i < j)
 such that the amount f(a_j) - g(a_i) is maximized. 
@@ -78,7 +78,7 @@ and we will result in a O(n) algorithm.
 _maximization_. we could as well be _minimizing_ (say)
 f(a_j) + g(a_i)
 
-#### Variant 2 (two transactions)
+### Variant 2 (two transactions)
 Here, the problem setup is the same as above, but now we are 
 allowed _two_ transactions where, at any point,
 - we may either buy/hold/sell a stock, and
@@ -145,7 +145,7 @@ can hold on to at most one stock.
 also be framed as a dynamic program, and total time taken 
 would be O(kn). 
 
-#### Variant 4 (arbitrary functions)
+### Variant 4 (arbitrary functions)
 Given an array A = [a_1, a_2, ..., a_n] and k functions
 f_1, f_2, ... f_k, find the 
 max (f_1(a_(i_1)) + f_2(a_(i_2)) + ... + f_k(a_(i_k))) 
@@ -161,8 +161,7 @@ i_1 < i_2 < i_3.
 - note that Variant 3 with _k_ transactions actually corresponds
 to (an instance of) Variant 4 with _2k_ functions.
 
-
-#### Variant 5 (play with constraints on indices)
+### Variant 5 (play with constraints on indices)
 In this setup, we are 
 - allowed 2 transactions,
 - at most one transaction (buy/sell) at a time,
@@ -189,7 +188,7 @@ situations.
     - so for both of the **events** described above, we may 
     find the max profit in O(n)
 
-#### Variant 6 (differnet constraints on indices, k transactions)
+### Variant 6 (differnet constraints on indices, k transactions)
 the setup in Variant 5 with k transactions instead of just 2. 
 
 #### Thoughts
