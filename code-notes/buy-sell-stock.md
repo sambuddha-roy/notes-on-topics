@@ -195,3 +195,6 @@ scale because the number of **events** will blow up
 exponentially, giving us O(2^k n). 
 - we need another trick.
 
+**To be contd.** This post has gone on long enough and 
+starting with Variant 6 will be continued in a new post.
+
