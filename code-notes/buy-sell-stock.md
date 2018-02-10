@@ -136,7 +136,7 @@ get a solution to the 2-transactions case, overall time = O(n)
         for now, that Q only contains the max 1-transaction value. 
     - and that is it - this solves Variant 2 in O(n) time.
 
-#### Variant 3 (k transactions):
+### Variant 3 (k transactions):
 Same problem setup, but k transactions instead of 2. at any point, 
 can hold on to at most one stock. 
 
@@ -195,7 +195,7 @@ the setup in Variant 5 with k transactions instead of just 2.
 - the trick applied for Variant 5 for 2 transactions will not 
 scale because the number of **events** will blow up 
 exponentially, giving us O(2^k n). 
-- we need another trick.
+- can we do better?
 
 **To be contd.** This post has gone on long enough and 
 starting with Variant 6 will be continued in a new post.
