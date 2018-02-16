@@ -21,6 +21,13 @@ i.e. O(n) where n is the length of the array.
 need to keep just two running quantities through the program 
 (say, _minimum_ and _difference_ or so.)
 
+#### Note 
+the idea of these code notes are to outline 
+the approach to the problem and its variants. 
+usually there will be memory
+optimizations that will allow us to use only O(1) extra
+memory, but we don't get into that part here.
+
 ### Variant 0:
 Given an array A = [a_1, a_2, ..., a_n] find indices i and j with 
 i < j so that the amount/profit a_j - a_i is _maximized_
@@ -160,6 +167,9 @@ a_(i_1) + a_(i_2) - a_(i_3) for three indices
 i_1 < i_2 < i_3. 
 - note that Variant 3 with _k_ transactions actually corresponds
 to (an instance of) Variant 4 with _2k_ functions.
+- actually this very much relates to 
+[Bellman's 1956 paper.](https://www.rand.org/content/dam/rand/pubs/papers/2009/P869.pdf)
+(will need to read this next.)
 
 ### Variant 5 (play with constraints on indices)
 In this setup, we are 
