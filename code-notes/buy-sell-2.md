@@ -88,7 +88,7 @@ we maintain two auxiliary arrays
     an index j such that j < i and `a_j < a_i` in the array A.
     - `Y = [y_1, y_2, ..., y_n]` where `y_i = 1` if there is 
     an index j such that `j> i` and `a_j < a_i` in array A.
-- Note (like in Variant 0), if we had these two arrays with 
+- Note (like in [Variant 0](https://github.com/sambuddha-roy/notes-on-topics/blob/master/code-notes/buy-sell-stock.md#variant-0)), if we had these two arrays with 
 us, it is easy to detect a 123-pattern:
     - **stitching**: we need to find an index i such that both x_i and y_i
     are = 1. 
@@ -148,7 +148,12 @@ can we detect the presence of a 123-pattern, in O(n) time, _for every prefix of 
         - Thinking back on a similar situation in [Variant 2](https://github.com/sambuddha-roy/notes-on-topics/blob/master/code-notes/buy-sell-stock.md#variant-2-two-transactions),
         we see that there, we had to consider the _minimum_ of the prefix of A. Here,
         we have to consider/compute the minimum as indicated above. 
-        - But this is one 1-time pass 
+        - So, wait! what we essentially want is a min-prefix kind-of operation on the 
+        array X! 
+        - i.e. in _one_ 1-time pass on the array X we create a new array Z
+        such that Z[i] = min{a_k: k <= i and k is the end of a 12-pattern in X[:i-1]}.
+        - Given X and A, this array Z is easy to construct. 
+    - **clean up and finish**: 
    
 
 ### Variant 10 (132-pattern)
