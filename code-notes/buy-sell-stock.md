@@ -143,6 +143,18 @@ get a solution to the 2-transactions case, overall time = O(n)
         for now, that Q only contains the max 1-transaction value. 
     - and that is it - this solves Variant 2 in O(n) time.
 
+### Interlude: 
+- what i loved most about the problem above is the following idea: 
+    - while Variant 1 indicates we can find the optimal 1-transaction for an 
+array A in O(n) time, 
+    - Variant 2 works off of the fact that we can in fact find the optimal 
+    1-transactions for _every prefix_ of array A _still in O(n) time_!
+- This is a very pretty feature of some problems, and is heavily used 
+in various optimization algorithms.
+- the interested reader may look up Megiddo's [parametric search](http://www.cs.uu.nl/research/techreps/repo/CS-2002/2002-050.pdf),
+[parametric max flow](http://www3.math.tu-berlin.de/MDS/summerschool11-material/parametric_network_flow.pdf), 
+etc. 
+
 ### Variant 3 (k transactions):
 Same problem setup, but k transactions instead of 2. at any point, 
 can hold on to at most one stock. 
