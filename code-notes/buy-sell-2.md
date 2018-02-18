@@ -163,7 +163,7 @@ can we detect the presence of a 123-pattern, in O(n) time, _for every prefix of 
         - We encode this information in an array D (note how quickly we are running 
         out of good letter-names for our constructed arrays :-))
     - **finish**
-        - We will use (i.e. _stitch_) the array D and the array Y in Variant 9 to decide if there is 
+        - We will use (i.e. _stitch_) the array D and the array Y in [Variant 9](https://github.com/sambuddha-roy/notes-on-topics/blob/master/code-notes/buy-sell-2.md#variant-9-123-patterns) to decide if there is 
         a 1234-pattern in the original array A. 
         - total time taken = O(n)
 
