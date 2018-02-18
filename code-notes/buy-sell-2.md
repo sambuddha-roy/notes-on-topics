@@ -187,3 +187,12 @@ are three indices `i < j < k` such that `a_i < a_j` and
 #### Thoughts
 - aa
 
+### Variant 11 (arbitrary permutation pattern)
+Here, we are given an array A = [`a_1, a_2, ..., a_n`], and we want 
+to check if there is a _permutation_ pi in it. 
+Clearly Variants 9, 10 are special cases of this Variant, for specific
+permutations.
+
+#### Thoughts:
+- not a clue.
+
