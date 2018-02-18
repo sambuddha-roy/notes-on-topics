@@ -151,10 +151,33 @@ can we detect the presence of a 123-pattern, in O(n) time, _for every prefix of 
         - So, wait! what we essentially want is a min-prefix kind-of operation on the 
         array X! 
         - i.e. in _one_ 1-time pass on the array X we create a new array Z
-        such that Z[i] = min{a_k: k <= i and k is the end of a 12-pattern in X[:i-1]}.
+        such that 
+            - Z[i] = min{a_k: k <= i and k is the end of a 12-pattern in X[:i-1]}.
         - Given X and A, this array Z is easy to construct. 
-    - **clean up and finish**: 
-   
+- **clean up and finish**: 
+    - **clean up**
+        - continuing, either there is a 123-pattern in A[:s-1]
+        - or A[s] participates in a 123-pattern. For this, we check if A[s] > Z[s-1]
+        - so overall, we get detection of a 123-pattern in every prefix of array A in 
+        O(n) time!
+        - We encode this information in an array D (note how quickly we are running 
+        out of good letter-names for our constructed arrays :-))
+    - **finish**
+        - We will use (i.e. _stitch_) the array D and the array Y in Variant 9 to decide if there is 
+        a 1234-pattern in the original array A. 
+        - total time taken = O(n)
+
+#### Interlude:
+- Like we mentioned in the [Interlude](https://github.com/sambuddha-roy/notes-on-topics/blob/master/code-notes/buy-sell-stock.md#interlude)
+on the previous post, this is a scenario where we can find out a certain quantity 
+not just for the full array but for every possible _prefix_ of the array.
+- The reader is invited to follow up on the two extra variants
+    - the _quantitative_ variant of the 1234-pattern a la [Variant 9a](https://github.com/sambuddha-roy/notes-on-topics/blob/master/code-notes/buy-sell-2.md#variant-9a-123-pattern-quantitative-version).
+    - the 123..k-pattern for an arbitrary k. we should be able to do this in 
+    O(kn) time. 
+        - But can we do better than this? For instance, if k = n, we are 
+        essentially asking if the array is sorted, which is O(n) time rather 
+        than O(kn) = O(n^2) time.
 
 ### Variant 10 (132-pattern)
 Given an array A = [`a_1, a_2, ..., a_n`] find if there 
@@ -162,5 +185,5 @@ are three indices `i < j < k` such that `a_i < a_j` and
 `a_i < a_k < a_j`.
 
 #### Thoughts
-- 
+- aa
 
