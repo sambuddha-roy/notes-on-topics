@@ -75,7 +75,8 @@ but the transaction a[i] -> a[i+2] is valid and profitable.
     more than t, then this is a transaction, pop the top element
     from the heap.
     - continue.
-- not liking the O(n log n) complexity here, will have to think more.
+- not liking the O(n log n) complexity here, will have to think more 
+to get O(n).
 
 ### Variant 9 (123-patterns)
 Given an array A = [`a_1, a_2, ..., a_n`] find if there 
@@ -153,7 +154,14 @@ can we detect the presence of a 123-pattern, in O(n) time, _for every prefix of 
         - i.e. in _one_ 1-time pass on the array X we create a new array Z
         such that 
             - Z[i] = min{a_k: k <= i and k is the end of a 12-pattern in X[:i-1]}.
-        - Given X and A, this array Z is easy to construct. 
+        - Given X and A, this array Z is easy to construct. Let's see a sample run:
+            - for eg. let A = [2, 3, 4, 1]
+            - so X = [0, 1, 1, 0]
+            - Now, we have to consider only elements of A where x_i = 1, so that we 
+            have X_A = [0, 3, 4, 0] and considering the min_prefix of this, we get the
+            array Z = [0, 3, 3, 3] - here an entry being 0 means there is no 12-pattern
+            ending at this index.
+            
 - **clean up and finish**: 
     - **clean up**
         - continuing, either there is a 123-pattern in A[:s-1]
@@ -169,8 +177,9 @@ can we detect the presence of a 123-pattern, in O(n) time, _for every prefix of 
 
 #### Interlude:
 - Like we mentioned in the [Interlude](https://github.com/sambuddha-roy/notes-on-topics/blob/master/code-notes/buy-sell-stock.md#interlude)
-on the previous post, this is a scenario where we can find out a certain quantity 
-not just for the full array but for every possible _prefix_ of the array.
+on the previous post, this is a scenario where we can compute a certain quantity 
+not just for the full array but for every possible _prefix_ of the array, all 
+in linear, i.e. O(n) time.
 - The reader is invited to follow up on the two extra variants
     - the _quantitative_ variant of the 1234-pattern a la [Variant 9a](https://github.com/sambuddha-roy/notes-on-topics/blob/master/code-notes/buy-sell-2.md#variant-9a-123-pattern-quantitative-version).
     - the 123..k-pattern for an arbitrary k. we should be able to do this in 
@@ -181,7 +190,7 @@ not just for the full array but for every possible _prefix_ of the array.
 
 ### Variant 10 (132-pattern)
 Given an array A = [`a_1, a_2, ..., a_n`] find if there 
-are three indices `i < j < k` such that `a_i < a_j` and 
+are three indices `i < j < k` such that 
 `a_i < a_k < a_j`.
 
 #### Thoughts
