@@ -160,7 +160,8 @@ can we detect the presence of a 123-pattern, in O(n) time, _for every prefix of 
             - Now, we have to consider only elements of A where x_i = 1, so that we 
             have X_A = [0, 3, 4, 0] and considering the min_prefix of this, we get the
             array Z = [0, 3, 3, 3] - here an entry being 0 means there is no 12-pattern
-            ending at or before this index. For another example of 0's appearing in 
+            ending at or before this index. 
+            - For another example of 0's appearing in 
             the array Z, consider A = [4, 3, 2, 1] so that X = [0, 0, 0, 0].
             
 - **clean up and finish**: 
