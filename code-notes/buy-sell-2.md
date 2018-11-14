@@ -177,6 +177,16 @@ can we detect the presence of a 123-pattern, in O(n) time, _for every prefix of 
         a 1234-pattern in the original array A. 
         - total time taken = O(n)
 
+### Variant 9c (12-pattern with max 1)
+Here we are given the array A = [`a_1, a_2, ..., a_n`]  and we are to find two indices 
+`i < j` such that `a_i < a_j` _and_ under this condition we are to find the largest `a_i`. 
+
+#### Thoughts
+Given the array A, let us construct the (max-suffix) array B:
+B_i = max(A[i+1:])
+Now do one more sweep of the arrays A and B in tandem, outputting the max A_i such that 
+A_i < B_i. 
+
 #### Interlude:
 - Like we mentioned in the [Interlude](https://github.com/sambuddha-roy/notes-on-topics/blob/master/code-notes/buy-sell-stock.md#interlude)
 on the previous post, this is a scenario where we can compute a certain quantity 
