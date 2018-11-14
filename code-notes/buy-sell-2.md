@@ -187,6 +187,8 @@ B_i = max(A[i+1:])
 Now do one more sweep of the arrays A and B in tandem, outputting the max A_i such that 
 A_i < B_i. 
 
+---
+
 #### Interlude:
 - Like we mentioned in the [Interlude](https://github.com/sambuddha-roy/notes-on-topics/blob/master/code-notes/buy-sell-stock.md#interlude)
 on the previous post, this is a scenario where we can compute a certain quantity 
