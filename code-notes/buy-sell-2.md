@@ -202,6 +202,8 @@ in linear, i.e. O(n) time.
         essentially asking if the array is sorted, which is O(n) time rather 
         than O(kn) = O(n^2) time.
 
+--- 
+
 ### Variant 10 (132-pattern)
 Given an array A = [`a_1, a_2, ..., a_n`] find if there 
 are three indices `i < j < k` such that 
