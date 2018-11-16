@@ -67,4 +67,3 @@ add one more guy (say the i+1_st guy) to the existing tables.
     - Each of the i_th step's matrix entries get updated to 
     reflect this. 
     - main issue is whether we can efficiently update the sketch. 
-    - 

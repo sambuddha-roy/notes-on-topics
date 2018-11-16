@@ -182,10 +182,10 @@ Here we are given the array A = [`a_1, a_2, ..., a_n`]  and we are to find two i
 `i < j` such that `a_i < a_j` _and_ under this condition we are to find the largest `a_i`. 
 
 #### Thoughts
-Given the array A, let us construct the (max-suffix) array B:
-B_i = max(A[i+1:])
-Now do one more sweep of the arrays A and B in tandem, outputting the max A_i such that 
+- Given the array A, let us construct the (max-suffix) array B: B_i = max(A[i+1:])
+- Now do one more sweep of the arrays A and B in tandem, outputting the max A_i such that 
 A_i < B_i. 
+- finito.
 
 ---
 
@@ -210,7 +210,16 @@ are three indices `i < j < k` such that
 `a_i < a_k < a_j`.
 
 #### Thoughts
-- aa
+- we can observe the following structure. Given an array that indeed has such indices `i < j < k`
+we can assume that `a_i` is the minimum of the array A[:j] (i.e. elements of A up to and not including 
+j, though including j will not make a difference in this case).
+- also, the elements `j < k` in the remaining array A[j:] constitute something like Variant 9c above, a
+12-pattern with max 1. 
+- so we would apply divide and conquer: break up the array at index j. in A[:j] (i.e. the prefix), find the
+minimum element, while in A[j:], the suffix, find a 21-pattern with max 1 (note that Variant 9c talks about a 
+12-pattern and here we need a 21-pattern). 
+- question: while variant 9c involves finding such a _max 1_ for a single array, in order to effectively divide
+and conquer, we would need these values for every suffix A[j:] of the array A. Can we do this?
 
 ### Variant 11 (arbitrary permutation pattern)
 Here, we are given an array A = [`a_1, a_2, ..., a_n`], and we want 
