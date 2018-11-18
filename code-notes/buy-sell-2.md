@@ -220,6 +220,16 @@ minimum element, while in A[j:], the suffix, find a 21-pattern with max 1 (note 
 12-pattern and here we need a 21-pattern). 
 - question: while variant 9c involves finding such a _max 1_ for a single array, in order to effectively divide
 and conquer, we would need these values for every suffix A[j:] of the array A. Can we do this?
+	- yes: given array A, let us construct the max-suffix array B, where B[i] = max(A[i:]) (in O(n) time)
+	- given array B, traverse from right to left (i.e. from end to beginning), and create array C, where 
+	`C[i] = (True, B[i+1])` if `B[i] > B[i+1]` else `C[i] = (False, Empty)`.
+	- what does array C encode? array C essentially maintains the 21-patterns with max 1 for every suffix of the array A
+	as desired. 
+- we also need to use D that is the min-prefix array for A i.e. `D[i] = min(A[:i])` (where A[:i] does not include the 
+i_th element).
+- given the arrays C and D, we can quickly compute the answer by traversing once more, and checking if `C[i][0] = True` and 
+`D[i] < C[i][1]`. Done.
+
 
 ### Variant 11 (arbitrary permutation pattern)
 Here, we are given an array A = [`a_1, a_2, ..., a_n`], and we want 
@@ -228,5 +238,5 @@ Clearly Variants 9, 10 are special cases of this Variant, for specific
 permutations.
 
 #### Thoughts:
-- not a clue.
-
+- we can extend Variant 10 to 1432-patterns, but not clear how much more mileage those stitching ideas have. 
+- no clue in the general case. 
